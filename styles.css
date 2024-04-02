@@ -33,6 +33,7 @@
     font-size: 25px;
  } 
 
+<<<<<<< HEAD
  a {
     text-decoration: none;
     color: black;
@@ -41,6 +42,22 @@
  a:hover {
     color: brown;
 }
+=======
+<<<<<<< HEAD
+ a { text-decoration: none; color: black;}
+
+ a:hover { color: brown;}
+=======
+ a {
+    text-decoration: none;
+    color: black;
+ }
+
+ a:hover {
+    color: brown;
+}
+>>>>>>> 67cba6b (Maquetado inicial TP Codo a Codo - Biblioteca digital)
+>>>>>>> 71e713c (Maquetado inicial TP Codo a Codo - Biblioteca digital)
 
 .container_section {
     width: 40%;
@@ -65,6 +82,13 @@
     display: flex;
     justify-content: right;
 }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+
+=======
+>>>>>>> 67cba6b (Maquetado inicial TP Codo a Codo - Biblioteca digital)
+>>>>>>> 71e713c (Maquetado inicial TP Codo a Codo - Biblioteca digital)
 aside{
     text-align: justify;
     margin-right: 10%;    
