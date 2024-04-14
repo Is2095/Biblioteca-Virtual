@@ -1,9 +1,0 @@
-header {
-    height: 90vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: red;
-    font-size: 2rem;
-    border: 2px solid black;
-}
