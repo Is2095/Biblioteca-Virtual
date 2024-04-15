@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de contacto</title>
+    <link rel="shortcut icon" href="./imagenes/formulario.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+
+<body>
+    <h1 class="divanimateh1">Formulario de contacto</h1>
+    <!-- <h1 class="animate__animated animate__backInLeft">Formulario de contacto</h1> -->
+    <form>
+        <h2 class="divanimateh2">Datos</h2>
+        <!-- <h2 class="animate__animated animate__backInLeft">Datos</h2> -->
+        <div class="container">
+            <div class="datos">
+                <div class="divInput">
+                    <label class="animate__animated animate__backInLeft" for="nombre">Nombre</label>
+                    <input class="entrada" type="text" name="nombre" id="nombre" placeholder="Ingrese el nombre...">
+                </div>
+
+                <div class="divInput">
+                    <label for="apellido">Apellido</label>
+                    <input class="entrada" type="text" name="apellido" id="apellido"
+                        placeholder="Ingrese el apellido...">
+
+                </div>
+
+                <div class="divInput">
+                    <label for="fechaNacimiento">Fecha actual</label>
+                    <input class="entrada" type="date" name="fechaNacimiento" id="fechaNacimiento">
+                </div>
+                <div class="divInput">
+                    <label for="correo">Correo electrónico</label>
+                    <input class="entrada" type="email" name="correo" id="correo"
+                        placeholder="Ingrese el correo electrónico...">
+                </div>
+
+
+                <div class="divInput">
+                    <label for="telefono">Número de teléfono</label>
+                    <input class="entrada" type="text" name="telefono" id="telefono"
+                        placeholder="Ingrese número de teléfono...">
+                </div>
+
+
+            </div>
+
+            <div class="divInput">
+                <label for="">Provincia de recidencia</label>
+                <select class="entrada" name="provincia" id="provincia">
+                    <option class="entrada" value="Elige una Provincia">Elige una Provincia</option>
+                </select>
+            </div>
+
+
+
+
+            <div class="divInput">
+                <label for="">Género</label>
+                <div class="genero">
+                    <div>
+                        <input type="radio" name="genero" id="mujer" value="Mujer" required>
+                        <label for="mujer">Mujer</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="genero" id="hombre" value="Hombre" required>
+                        <label for="hombre">Hombre</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="genero" id="otro" value="Otro" required>
+                        <label for="otro">Otro</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="genero" id="noRespondo" value="Prefiero no responder" required>
+                        <label for="noRespondo">Prefiero no Responder</label>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="divInput">
+                <label for="mensaje">Mensaje</label>
+                <textarea class="entrada" name="mensaje" id="mensaje" cols="30" rows="10"></textarea>
+            </div>
+
+
+        </div>
+        <button type="submit">Enviar</button>
+    </form>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
