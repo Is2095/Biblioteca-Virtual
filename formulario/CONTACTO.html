@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,7 +15,9 @@
 <body>
     <div class="container">
         <h1 class="divanimateh1">Formulario de contacto</h1>
+
         <form id="formulario" class="needs-validation" novalidate>
+
             <h2 class="divanimateh2">Datos</h2>
             <div class="divInput">
                 <label class="animate__animated animate__backInLeft" for="nombre">Nombre</label>
@@ -99,8 +100,12 @@
                 <label for="mensaje" class="labelTextarea">Mensaje</label>
                 <textarea class="entradaTextarea" name="mensaje" id="mensaje" cols="40" rows="5"></textarea>
             </div>
-
-            <button type="submit">Enviar</button>
+            <div class="botonesContacto">
+                <button><a href="../index.html" class="homeDeContacto">Ir al Inicio</a></button>
+                <button type="submit" class="botonFocus">Enviar Datos</button>
+                <button type="button" onclick="{document.getElementById('formulario').reset()}">Borrar
+                    Formulario</button>
+            </div>
 
         </form>
     </div>
