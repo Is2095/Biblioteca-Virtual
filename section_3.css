@@ -17,7 +17,7 @@ body {
 }
 
 .titulo {
-    color: #642a73;
+    color: #1b383a;
     font-size: 30px;
     text-align: center;
     margin-bottom: 60px;
@@ -27,13 +27,9 @@ body {
 
 header {
     width: 100%;
-    height: 400px;
-    background: #bc4e9c;
-    /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, hsla(340, 95%, 50%, 0.459), hsla(317, 45%, 52%, 0.664)), url(../img/portada.jpg);
-    /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, hsla(340, 95%, 50%, 0.459), hsla(317, 45%, 52%, 0.664)), url(../img/portada.jpg);
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    height: 300px;
+    background: #e7cc65;
+    background: linear-gradient(to right, hsla(44, 84%, 22%, 0.317), hsla(59, 82%, 11%, 0.664));
     background-size: cover;
     background-attachment: fixed;
     position: relative;
@@ -57,7 +53,7 @@ nav > a:hover{
 
 header .textos-header{
     display: flex;
-    height: 430px;
+    height: 330px;
     width: 100%;
     align-items: center;
     justify-content: center;
@@ -82,7 +78,7 @@ header .textos-header{
     width: 100%;
 }
 
-/* About us */
+
 
 main .los_mas_leidos{
     padding: 30px 0 60px 0;
@@ -95,6 +91,7 @@ main .los_mas_leidos{
 .imagen-about-us{
     width: 18%;
     height: auto;
+    margin: 2%
 }
 
 .sobre-nosotros .contenido-textos{
@@ -106,7 +103,7 @@ main .los_mas_leidos{
 }
 
 .contenido-textos h3 span{
-    background: #4d0686;
+    background: #e1895d;
     color: #fff;
     border-radius: 50%;
     display: inline-block;
@@ -116,6 +113,7 @@ main .los_mas_leidos{
     padding: 2px;
     box-shadow: 0 0 6px 0 rgba(0, 0, 0, .5);
     margin-right: 5px;
+    margin-top: 1%;
 }
 
 .contenido-textos p{
@@ -186,7 +184,7 @@ main .los_mas_leidos{
 }
 
 .cards .card{
-    background: #4d0686;
+    background: #e7cc65;
     display: flex;
     width: 46%;
     height: 200px;
@@ -207,7 +205,7 @@ main .los_mas_leidos{
 
 .cards .card > .contenido-texto-card{
     width: 60%;
-    color: #fff;
+    color: #1b383a;
 }
 
 .cards .card > .contenido-texto-card p{
