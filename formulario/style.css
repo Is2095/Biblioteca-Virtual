@@ -4,22 +4,20 @@
     padding: 0;
     box-sizing: border-box;
 }
-body {
+.container {
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-/* h1 {
-    font-size: 4rem;
-    margin-top: 1.5rem;
-} */
 form {
-    width: 40rem;
-    /* background-color: #24303c; */
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: auto;
     padding: 1.5rem;
-    margin: auto;
-    margin-top: 1.5rem;
+    margin: 1.5rem auto;
     border-radius: .8rem;
     font-family: Arial, Helvetica, sans-serif;
     box-shadow: 10px 15px 40px #000;
@@ -32,27 +30,51 @@ form h2 {
     text-align: center;
 }
 .entrada {
-    width: 60%;
-    /* background-color: rgb(90, 90, 89); */
-    padding: .6rem;
+    width: 20rem;
+    height: 2rem;
+    padding: .2rem;
+    margin-left: .3rem;
     border-radius: .3rem;
-    margin-bottom: .8rem;
     border: 2px solid rgb(230, 228, 228);
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1rem;
+}
+.entradaTextarea {
+    position: relative;
+    top: 0;
+    margin-top: 1rem;
+    padding: 0.2rem;
+    outline: none;
+    border-radius: .3rem;
+    border: 2px solid rgb(230, 228, 228);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+
+}
+.entradaTextarea:focus {
+    border: 2px solid blue;
+    box-shadow: 1px 1px 10px rgb(0, 0, 255, 0.8);
+}
+.labelTextarea {
+    margin: 1rem;
+    position: relative;
+    top: 0;
 }
 input {
     outline: none;
 }
 .entrada:focus {
     border: 2px solid blue;
-    box-shadow: 1px 1px 10px rgb(0,0,255, 0.8);
+    box-shadow: 1px 1px 10px rgb(0, 0, 255, 0.8);
 }
 form button {
-    width: 50%;
+    cursor: pointer;
+    width: 6rem;
     background-color: #1f53c5;
+    border-radius: .4rem;
     padding: .6rem;
-    margin: .8rem 25% 0;
+    margin-left: auto;
+    margin-right: auto;
     border: none;
     color: white;
     font-size: 1rem;
@@ -60,15 +82,108 @@ form button {
 .genero {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    padding: 1rem;
+    position: relative;
+    /* justify-content: space-around; */
+    padding-top: .4rem;
+    margin-left: 1.5rem;
 }
 .divanimateh1 {
     animation: backInLeft;
-    animation-duration: 5s;
+    animation-duration: 4.2s;
 }
 .divanimateh2 {
     animation: backInLeft;
     animation-duration: 4s;
-    
+}
+.divInput {
+    display: flex;
+    align-items: center;
+    height: 3.2rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+.entradaInputValidaciones {
+    flex-direction: column;
+}
+.divGenero {
+    margin-right: 1rem;
+}
+.laberGenero {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+.divInputGenero {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: auto;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+.divInputTextarea {
+    display: flex;
+    margin: 1rem;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+.invalid-feedback {
+    font-size: .7rem !important;
+    font-weight: 600 !important;
+    margin: 0 !important;
+    margin-left: .3rem !important;
+    color: red !important;
+}
+.invalid-tooltip {
+    font-size: .7rem !important;
+    font-weight: 600 !important;
+    margin: 0 !important;
+    background-color: white !important;
+    color: red !important;
+}
+
+@media screen and (max-width: 400px) {
+    .divInput {
+        flex-direction: column;
+        align-items: start;
+        height: auto;
+    }
+    .entrada {
+        width: 100%;
+        height: 1.5rem;
+        font-size: .8rem;
+    }
+    form{
+        width: 300px;
+    }
+    form h2 {
+        font-size: 1.5rem;
+        margin: 0;
+    }
+    form button {
+        width: 4rem;
+        border-radius: .3rem;
+        font-size: .8rem;
+    }
+    .genero {
+        flex-direction: column;
+        font-size: small;
+    }
+    .divInputTextarea {
+        flex-direction: column;
+    }
+    .divInputGenero {
+        flex-direction: column;
+        align-items: start;
+    }
+    .labelTextarea {
+        margin: 0;
+    }
+    .entradaTextarea {
+        margin: 0;
+        font-size: 0.8rem
+    }
+}
+@media screen and (max-width: 650px) {
+
 }
