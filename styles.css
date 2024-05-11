@@ -75,8 +75,44 @@ header h1{
 
  a:hover { color: brown;}
 
+/* Estilos para el contenedor principal */
+.principal {
+  display: flex;
+}
 
-/*MAIN*/
+/* Estilos para el contenedor del carrusel y los textos */
+.container_section {
+  width: 50%; /* Modifica el ancho para que el carrusel ocupe la mitad del contenedor principal */
+  height: auto;
+  margin: 5%;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Sombreado suave */
+  display: flex;
+  justify-content: center; /* Centra los elementos horizontalmente */
+  align-items: center; /* Centra los elementos verticalmente */
+}
+
+.carousel {
+  width: 80%; /* Ajusta el ancho del carrusel para que ocupe el 80% del contenedor_section */
+  height: 80vh; /* Ajusta la altura del carrusel a un 80% del viewport height */
+  margin: 0 auto; /* Centra el carrusel horizontalmente dentro de su contenedor */
+}
+
+/* Estilos para el contenedor de los textos */
+.container_aside {
+  width: 50%; /* Modifica el ancho para que los textos ocupen la otra mitad del contenedor principal */
+  background-color: #f0f0f0; /* Color tenue de fondo para los textos */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Sombreado suave */
+  display: flex;
+  flex-direction: column; /* Distribuye los elementos verticalmente */
+  justify-content: center; /* Centra los elementos verticalmente */
+}
+
+aside {
+  text-align: justify;
+  margin: 0 10%; /* Ajusta los márgenes horizontalmente */
+}
+
+/*MAIN
 
 .principal {
   display: flex;
@@ -110,9 +146,97 @@ aside {
     text-align: justify;
     margin-right: 10%;    
 }
+*/
+/*Footer */
+
+footer {
+  background: #2C3E50;
+  padding: 20px 0 10px 0;
+  margin: auto;
+  overflow: hidden;
+}
+
+.contenedor-footer {
+  display: flex;
+  width: 90%;
+  justify-content: space-between; 
+  margin: auto;
+  padding-bottom: auto;
+  border-bottom: 2px solid #ccc;
+}
+
+.content-foo {
+  text-align: center;
+  flex: 1;
+}
+
+.mapa {
+  margin-top: 10px;
+  border-radius: 10%;
+  margin-bottom: 5px;
+}
+.content-foo h4 {
+  color: #fff;
+  border-bottom: 3px solid #af20d3;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+}
+
+.content-foo h3 {
+  color: #d5d5b5f1;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+}
+
+.content-foo h3 a {
+ color: #d5d5b5f1;
+
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+}
+.adress {
+  color: #ccc;
+  padding-bottom: 5px;
+  margin-top: 2%;
+
+}
+.somos {
+  margin-top: 40px;
+  text-align: left;
+  color: #ccc;
+  font-size: 18px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+.redes {
+  margin-bottom: 20px;
+}
+
+.redes a {
+  color: #fff;
+  display: inline-block;
+  text-decoration: none;
+  border: 1px solid #fff;
+  border-radius: 100%;
+  width: 42px;
+  height: 42px;
+  line-height: 42px;
+  margin: 40px 5px;
+  font-size: 20px;
+  transition: .3s;
+}
+
+.titulo-final {
+  color: #fff;
+  font-size: 16px;
+  text-align: right;
+  margin-right: 10%;
+
+}
 
 
-/* footer */
+
+/* footer 
 
 .footer-style {
   background-color: #2C3E50;
@@ -137,4 +261,4 @@ aside {
   margin-right: 10px;
   color: white;
   font-size: 20px;
-}
+} */
