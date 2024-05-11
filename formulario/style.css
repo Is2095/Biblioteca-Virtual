@@ -1,9 +1,9 @@
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
 .container {
     width: 100%;
     display: flex;
@@ -11,6 +11,7 @@
     justify-content: center;
     align-items: center;
 }
+
 form {
     display: flex;
     flex-direction: column;
@@ -24,11 +25,13 @@ form {
     animation: backInLeft;
     animation-duration: 3s;
 }
-form h2 {
+
+form h1 {
     font-size: 2.2rem;
     margin-bottom: 2rem;
     text-align: center;
 }
+
 .entrada {
     width: 20rem;
     height: 2rem;
@@ -39,6 +42,7 @@ form h2 {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1rem;
 }
+
 .entradaTextarea {
     position: relative;
     top: 0;
@@ -51,22 +55,27 @@ form h2 {
     font-size: 1rem;
 
 }
+
 .entradaTextarea:focus {
     border: 2px solid blue;
     box-shadow: 1px 1px 10px rgb(0, 0, 255, 0.8);
 }
+
 .labelTextarea {
     margin: 1rem;
     position: relative;
     top: 0;
 }
+
 input {
     outline: none;
 }
+
 .entrada:focus {
     border: 2px solid blue;
     box-shadow: 1px 1px 10px rgb(0, 0, 255, 0.8);
 }
+
 form button {
     cursor: pointer;
     width: auto;
@@ -79,23 +88,28 @@ form button {
     color: white;
     font-size: 1rem;
 }
+
 form button:hover {
     background-color: #6181c5;
     color: blue;
 
 }
-.botonesContacto{
+
+.botonesContacto {
     display: flex;
     justify-content: center;
 }
+
 .homeDeContacto {
     color: white;
     text-decoration: none;
 }
-.homeDeContacto:hover {  
-    background-color: #6181c5; 
+
+.homeDeContacto:hover {
+    background-color: #6181c5;
     color: blue;
 }
+
 .genero {
     display: flex;
     flex-direction: row;
@@ -103,14 +117,17 @@ form button:hover {
     padding-top: .4rem;
     margin-left: 1.5rem;
 }
+
 .divanimateh1 {
     animation: backInLeft;
     animation-duration: 4.2s;
 }
+
 .divanimateh2 {
     animation: backInLeft;
     animation-duration: 4s;
 }
+
 .divInput {
     display: flex;
     align-items: center;
@@ -119,16 +136,20 @@ form button:hover {
     font-size: 1.2rem;
     font-weight: bold;
 }
+
 .entradaInputValidaciones {
     flex-direction: column;
 }
+
 .divGenero {
     margin-right: 1rem;
 }
-.laberGenero {
+
+.labelGenero {
     font-size: 1.2rem;
     font-weight: bold;
 }
+
 .divInputGenero {
     display: flex;
     flex-direction: row;
@@ -137,12 +158,14 @@ form button:hover {
     margin-bottom: 0.5rem;
     font-size: 1.2rem;
 }
+
 .divInputTextarea {
     display: flex;
     margin: 1rem;
     font-weight: bold;
     font-size: 1.2rem;
 }
+
 .invalid-feedback {
     font-size: .7rem !important;
     font-weight: 600 !important;
@@ -150,6 +173,7 @@ form button:hover {
     margin-left: .3rem !important;
     color: red !important;
 }
+
 .invalid-tooltip {
     font-size: .7rem !important;
     font-weight: 600 !important;
@@ -158,53 +182,246 @@ form button:hover {
     color: red !important;
 }
 
+.container_nav {
+    display: flex;
+    justify-content: space-between;
+    margin: .9rem;
+}
+
+.container_nav_menu {
+    margin-top: 30px;
+}
+
+.ulNav {
+    list-style-type: none;
+}
+
+li {
+    display: inline;
+    text-align: center;
+    margin: 0 10px 0 0;
+    font-size: 25px;
+}
+
+.aNav {
+    text-decoration: none;
+    color: black;
+}
+
+.aNav:hover {
+    color: brown;
+}
+
+.container_footer {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 2rem;
+    background-color: #233140;
+    padding: 2rem 1rem 1rem;
+}
+
+.ulFooter {
+    padding: 0;
+}
+
+.liFooter {
+    padding: 0;
+    margin: 0;
+    font-size: 2rem;
+}
+
+.direccionFooter {
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.pDireccionFooter {
+    margin: 1rem;
+    padding: .5rem;
+    color: white;
+}
+
+.pQuienesSomos {
+    margin: 1rem;
+    padding: .5rem;
+    color: white;
+}
+
+.redesFooter {
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.aRedes {
+    color: #000;
+    margin: .9rem;
+}
+
+.aRedes:hover {
+    color: brown;
+}
+
+.quienesSomosFooter {
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.h3Footer {
+    color: white;
+    margin: 2rem;
+}
+
+.h3FooterA {
+    color: white;
+    text-decoration: none;
+}
+
 @media screen and (max-width: 400px) {
     .divInput {
         flex-direction: column;
         align-items: start;
         height: auto;
     }
+
     .entrada {
         width: 100%;
         height: 1.5rem;
         font-size: .8rem;
     }
-    form{
+
+    form {
         width: 300px;
+        margin-top: 0;
+        padding-top: .8rem;
     }
-    form h2 {
-        font-size: 1.5rem;
-        margin: 0;
+
+    form h1 {
+        font-size: 1.4rem;
+        font-weight: bolder;
+        margin-bottom: 1rem;
     }
+
     form button {
         border-radius: .3rem;
         font-size: .8rem;
         margin-top: .5rem;
         width: 80%;
     }
+
     .botonesContacto {
         flex-direction: column;
         align-items: center;
     }
+
     .genero {
         flex-direction: column;
         font-size: small;
+        width: 100%;
     }
+
     .divInputTextarea {
         flex-direction: column;
     }
+
     .divInputGenero {
         flex-direction: column;
         align-items: start;
     }
+
     .labelTextarea {
         margin: 0;
     }
+
+    .labelGenero {
+        font-size: .9rem;
+    }
+
     .entradaTextarea {
         margin: 0;
         font-size: 0.8rem
     }
-}
-@media screen and (max-width: 650px) {
 
+    .labelFormulario {
+        font-size: .9rem;
+    }
+
+    .container_nav {
+        flex-direction: column;
+    }
+
+    .container_nav_menu {
+        flex-direction: row;
+        margin: 0;
+    }
+
+    li {
+        font-size: .8rem;
+        font-weight: bolder;
+    }
+
+    .ulNav {
+        display: flex;
+        justify-content: center;
+        margin: .5rem 0;
+        padding: 0;
+    }
+
+    .imagenCodoACodo {
+        width: 6rem;
+        height: 3rem;
+    }
+
+    .container_footer {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        padding: 0rem 1rem 1rem;
+    }
+
+    .redesFooter {
+        width: 100%;
+        border-bottom: 2px solid brown;
+    }
+
+    .direccionFooter {
+        width: 100%;
+        border-bottom: 2px solid brown;
+    }
+
+    .quienesSomosFooter {
+        width: 100%;
+    }
+
+    .liFooter {
+        font-size: 1.5rem;
+        margin: 0;
+        padding: 0;
+    }
+
+    .pQuienesSomos {
+        margin: 0;
+        padding: 0;
+        color: white;
+    }
+}
+
+@media screen and (max-width: 770px) {
+    iframe {
+        width: 200px;
+        height: 100px;
+    }
+
+    .pQuienesSomos {
+        margin: 0;
+        padding: 0;
+        color: white;
+    }
 }

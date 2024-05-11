@@ -13,14 +13,23 @@
 </head>
 
 <body>
+    <nav class="container_nav">
+        <div class="container_nav_logo">
+            <img class="imagenCodoACodo" src="/images/logo.jpg" alt="logo" width="146" height="66">
+        </div>
+        <div class="container_nav_menu">
+            <ul class="ulNav">
+                <li><a class="aNav" href="../index.html">Home</a></li>
+                <li><a class="aNav" href="../seccion_3.html">Novedades</a></li>
+                <li><a class="aNav" href="../About_us.html">Quienes somos</a></li>
+            </ul>
+        </div>
+    </nav>
     <div class="container">
-        <h1 class="divanimateh1">Formulario de contacto</h1>
-
         <form id="formulario" class="needs-validation" novalidate>
-
-            <h2 class="divanimateh2">Datos</h2>
+            <h1 class="divanimateh1">Formulario de contacto</h1>
             <div class="divInput">
-                <label class="animate__animated animate__backInLeft" for="nombre">Nombre</label>
+                <label class="labelFormulario" for="nombre">Nombre</label>
                 <div class="entradaInputValidaciones">
                     <input class="entrada" type="text" name="nombre" id="nombre" placeholder="Ingrese el nombre..."
                         required>
@@ -31,7 +40,7 @@
             </div>
 
             <div class="divInput">
-                <label for="apellido">Apellido</label>
+                <label class="labelFormulario" for="apellido">Apellido</label>
                 <div class="entradaInputValidaciones">
                     <input class="entrada" type="text" name="apellido" id="apellido"
                         placeholder="Ingrese el apellido..." required>
@@ -42,12 +51,12 @@
             </div>
 
             <div class="divInput">
-                <label for="fechaNacimiento">Fecha actual</label>
+                <label class="labelFormulario" for="fechaNacimiento">Fecha actual</label>
                 <input class="entrada" type="date" name="fechaNacimiento" id="fechaNacimiento">
             </div>
 
             <div class="divInput">
-                <label for="correo">Correo electrónico</label>
+                <label class="labelFormulario" for="correo">Correo electrónico</label>
                 <div class="entradaInputValidaciones">
                     <input class="entrada" type="email" name="correo" id="correo"
                         placeholder="Ingrese el correo electrónico..." required>
@@ -59,49 +68,48 @@
             </div>
 
             <div class="divInput">
-                <label for="telefono">Número de teléfono</label>
+                <label class="labelFormulario" for="telefono">Número de teléfono</label>
                 <input class="entrada" type="text" name="telefono" id="telefono"
                     placeholder="Ingrese número de teléfono...">
             </div>
 
             <div class="divInput">
-                <label for="">Provincia de recidencia</label>
+                <label class="labelFormulario" for="">Provincia de recidencia</label>
                 <select class="entrada" name="provincia" id="provincia">
                     <option value="Elige una Provincia">Elige una Provincia</option>
                 </select>
             </div>
 
             <div class="divInputGenero">
-                <label for="" class="laberGenero">Género</label>
-                <div class="genero">
-                    <div class="divGenero">
-                        <input type="radio" name="genero" id="mujer" value="Mujer" required>
-                        <label for="mujer">Mujer</label>
-                        <div class="invalid-tooltip">
-                            Debe elegir una opción de género
+                <labelfor="" class="labelGenero">Género</label>
+                    <div class="genero">
+                        <div class="divGenero">
+                            <input type="radio" name="genero" id="mujer" value="Mujer" required>
+                            <label for="mujer">Mujer</label>
+                            <div class="invalid-tooltip">
+                                Debe elegir una opción de género
+                            </div>
+                        </div>
+                        <div class="divGenero">
+                            <input type="radio" name="genero" id="hombre" value="Hombre" required>
+                            <label for="hombre">Hombre</label>
+                        </div>
+                        <div class="divGenero">
+                            <input type="radio" name="genero" id="otro" value="Otro" required>
+                            <label for="otro">Otro</label>
+                        </div>
+                        <div class="divGenero">
+                            <input type="radio" name="genero" id="noRespondo" value="Prefiero no responder" required>
+                            <label for="noRespondo">Prefiero no Responder</label>
                         </div>
                     </div>
-                    <div class="divGenero">
-                        <input type="radio" name="genero" id="hombre" value="Hombre" required>
-                        <label for="hombre">Hombre</label>
-                    </div>
-                    <div class="divGenero">
-                        <input type="radio" name="genero" id="otro" value="Otro" required>
-                        <label for="otro">Otro</label>
-                    </div>
-                    <div class="divGenero">
-                        <input type="radio" name="genero" id="noRespondo" value="Prefiero no responder" required>
-                        <label for="noRespondo">Prefiero no Responder</label>
-                    </div>
-                </div>
             </div>
 
             <div class="divInputTextarea">
-                <label for="mensaje" class="labelTextarea">Mensaje</label>
+                <label class="labelFormulario" for="mensaje" class="labelTextarea">Mensaje</label>
                 <textarea class="entradaTextarea" name="mensaje" id="mensaje" cols="40" rows="5"></textarea>
             </div>
             <div class="botonesContacto">
-                <button><a href="../index.html" class="homeDeContacto">Ir al Inicio</a></button>
                 <button type="submit" class="botonFocus">Enviar Datos</button>
                 <button type="button" onclick="{document.getElementById('formulario').reset()}">Borrar
                     Formulario</button>
@@ -109,6 +117,46 @@
 
         </form>
     </div>
+
+    <footer class="container_footer">
+        <div class="direccionFooter">
+            <h3 class="h3Footer">Dirección</h3>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.753271036201!2d-58.40201092338667!3d-34.585109056517176!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca9e62bc9fb7%3A0xd4513402bd37a401!2sBiblioteca%20Nacional!5e0!3m2!1ses-419!2sar!4v1712017195078!5m2!1ses-419!2sar"
+                width="300" height="150" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <p class="pDireccionFooter">
+                Av. Gral. Las Heras 2555, C1425ASC Cdad. Autónoma de Buenos Aires
+            </p>
+        </div>
+        <div class="redesFooter">
+            <h3 class="h3Footer">Redes</h3>
+            <ul class="ulFooter">
+                <li class="liFooter">
+                    <a target="_blank" href="#" class="aRedes"><i class="fa-brands fa-facebook"></i></a>
+                </li>
+                <li class="liFooter">
+                    <a target="_blank" href="#" class="aRedes"><i class="fa fa-fw fa-google-plus"></i></a>
+                </li>
+                <li class="liFooter">
+                    <a target="_blank" href="#" class="aRedes"><i class="fa fa-fw fa-twitter"></i></a>
+                </li>
+                <li class="liFooter">
+                    <a target="_blank" href="#" class="aRedes"><i class="fa fa-fw fa-linkedin"></i></a>
+                </li>
+                <li class="liFooter">
+                    <a target="_blank" href="#" class="aRedes"><i class="fa fa-fw fa-dribbble"></i></a>
+                </li>
+            </ul>
+        </div>
+        <div class="quienesSomosFooter">
+            <h3 class="h3Footer"><a class="h3FooterA" href="../About_us.html">Quienes somos</a></h3>
+            <p class="pQuienesSomos">Nos dedicamos a brindarte el catálogo más completo de libros: novelas,
+                autobiografías, Historia,
+                autoayuda, divulgación científica, poesía, y miles de títulos para todos los gustos literarios
+            </p>
+        </div>
+    </footer>
 
     <script src="js/script.js"></script>
 
@@ -131,6 +179,7 @@
             })
         })()
     </script>
+    <script src="https://kit.fontawesome.com/faec7e0b5f.js" crossorigin="anonymous"></script>
 
 </body>
 
