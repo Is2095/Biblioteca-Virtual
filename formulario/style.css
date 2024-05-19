@@ -299,7 +299,7 @@ footer {
     margin-right: 10%;
 
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 500px) {
     .divInput {
         flex-direction: column;
         align-items: start;
@@ -439,7 +439,7 @@ footer {
     }
 }
 
-@media screen and (max-width: 770px) {
+@media screen and (max-width: 900px) {
     iframe {
         width: 200px;
         height: 100px;
