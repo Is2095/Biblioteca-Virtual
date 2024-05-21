@@ -68,7 +68,7 @@ header h1{
     .inicio {
         position: relative; /* Añadir posición relativa para poder superponer elementos */
        
-        background: linear-gradient(to bottom, rgb(247, 243, 243), rgba(0, 0, 0, 0.6)), url(/Images/books-8594725_1280.jpg);
+        background: linear-gradient(to bottom, rgb(247, 243, 243), rgba(0, 0, 0, 0.6)), url(./Images/books-8594725_1280.jpg);
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center center;
