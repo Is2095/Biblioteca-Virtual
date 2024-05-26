@@ -6,6 +6,11 @@
 .container_nav_menu {
    margin-top: 10px;
 }
+.container_header .container_nav_logo{
+  width: 146px;
+  height: auto;
+
+}
 
 header {
   width: 100%;
@@ -88,7 +93,7 @@ header h1{
     overflow: hidden; /* Oculta el contenido que se desborde del contenedor */
     align-items: center;
     justify-content: center;
-    max-height: 90vh;
+    max-height: 100vh;
    
 }
 .carousel-item{
@@ -98,7 +103,7 @@ header h1{
 }
 .carousel-item img {
     max-width: 40%; /* Ajustar al 100% del ancho del contenedor */
-    height: 90vh; 
+    height: auto; 
     opacity: 1; /* Opacidad al 100% para las imágenes del carrusel */
     MARGIN: 0 auto;
 }
@@ -106,8 +111,8 @@ header h1{
 .carousel-control-next-icon {
     width: 100px; /* Ancho de la flecha */
     height: 40px; /* Altura de la flecha */
-    font-size: 8rem; /* Tamaño de la flecha */
-    border: 2px solid #fff; /* Borde de 2px sólido blanco */
+    font-size: 24rem; /* Tamaño de la flecha */
+  
   
    
     
@@ -115,7 +120,7 @@ header h1{
 
 .carousel-control-prev-icon:hover,
 .carousel-control-next-icon:hover {
-    background-color: #0056b3; /* Cambio de color al pasar el cursor */
+    background-color: #cdd2d8bf; /* Cambio de color al pasar el cursor */
     color: #fff; /* Cambio de color del texto al pasar el cursor */
 }
   
@@ -123,8 +128,10 @@ header h1{
   @media (max-width: 768px) {
     .carousel-item img {
       max-width: 100%; /* Ajusta el ancho al 100% en dispositivos con ancho de pantalla menor a 768px */
+        height: auto; /* Altura automática para mantener la proporción de la imagen */
+      }
     }
-  }
+  
 .contenedor_section {
     width: 100%;
     height: 50vh; /* Ajusta la altura del carrusel a un 50% del viewport height */
@@ -322,18 +329,34 @@ footer {
     }
 
     .textos-header h1{
-        font-size: 35px;
+        font-size: 25px;
     }
 
     .textos-header h2{
-        font-size: 20px;
+        font-size: 10px;
+    }
+    .container_header .container_nav_logo {
+      width: 100px;
+      margin-bottom: 10px;
     }
 }
+
+
 @media screen and (max-width:900px){
     header{
         background-position: center;
     }
+    .textos-header h1{
+      font-size: 25px;
+  }
 
+  .textos-header h2{
+      font-size: 10px;
+  }
+  .container_header .container_nav_logo {
+    width: 120px;
+    margin-bottom: 10px;
+  }
     .los_mas_leidos{
         flex-direction: column;
         justify-content: center;
