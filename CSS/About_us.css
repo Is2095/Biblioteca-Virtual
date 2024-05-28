@@ -79,19 +79,39 @@ ul li i {
 
 
 /* menú */
+.container_nav {
+    display: flex;
+    justify-content: space-between;
+    margin: .9rem;
+}
 
-.container_nav { display: flex; justify-content: space-between;}
+.container_nav_menu {
+    margin-top: 30px;
+}
 
-.container_nav_menu { margin-top: 2%;}
+.container_nav_logo {
+    margin-top: 30px;
+}
 
-ul{ list-style-type: none;}
+.ulNav {
+    list-style-type: none;
+}
 
-li{ display: flex; text-align: center; margin: 0 10px 0 0; font-size: 25px;}
+.ulNav li {
+    display: inline;
+    text-align: center;
+    margin: 0 10px 0 0;
+    font-size: 25px;
+}
 
-a {  text-decoration: none; color: black;}
+.aNav {
+    text-decoration: none;
+    color: black;
+}
 
-a:hover { color: brown;}
-
+.aNav:hover {
+    color: brown;
+}
 
 /* formulario */
 
@@ -206,6 +226,39 @@ footer {
   }
   }
   @media screen and (max-width:500px){
+    .container_nav {
+        display: flex;
+        justify-content: space-between;
+        margin: .9rem;
+    }
+    
+    .container_nav_menu {
+        margin-top: 30px;
+    }
+    
+    .ulNav {
+        list-style-type: none;
+    }
+    
+    .ulNav li {
+        display: inline;
+        text-align: center;
+        margin: 0 10px 0 0;
+        font-size: 25px;
+    }
+    
+    .aNav {
+        text-decoration: none;
+        color: black;
+    }
+    
+    .aNav:hover {
+        color: brown;
+    }
+    
+   
+   
+   
     .contenedor-footer {
       flex-direction: column;
   }
