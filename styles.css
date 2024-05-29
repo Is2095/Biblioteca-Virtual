@@ -107,8 +107,8 @@ header h1{
     
 }
 .carousel-item img {
-    max-width: 40%; /* Ajustar al 100% del ancho del contenedor */
-    height: 80vh; 
+    max-width: 100%; /* Ajustar al 100% del ancho del contenedor */
+    height: 100%; 
     MARGIN: 0 auto;
 }
 .carousel-control-prev-icon,
