@@ -91,7 +91,7 @@ header h1{
 
 /* Estilos para el carrusel */
 .carousel-container {
-    max-width: 80%; /* Establece un ancho máximo para el contenedor del carrusel */
+    width: 35%; /* Establece un ancho máximo para el contenedor del carrusel */
     overflow: hidden; /* Oculta el contenido que se desborde del contenedor */
     align-items: center;
     justify-content: center;
@@ -107,9 +107,9 @@ header h1{
     
 }
 .carousel-item img {
-    max-width: 40%; /* Ajustar al 100% del ancho del contenedor */
-    height: 80vh; 
-    MARGIN: 0 auto;
+    width: 100%; /* Ajustar al 100% del ancho del contenedor */
+    height: 100%; 
+    margin: 0 auto;
 }
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
@@ -137,12 +137,32 @@ header h1{
   color: #fff;
 } 
   /* Estilos para hacer el carrusel responsive */
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     .carousel-item img {
-      max-width: 100%; /* Ajusta el ancho al 100% en dispositivos con ancho de pantalla menor a 768px */
-        height: auto; /* Altura automática para mantener la proporción de la imagen */
+      width: 100%; /* Ajusta el ancho al 100% en dispositivos con ancho de pantalla menor a 768px */
+      height: 70vh; /* Altura automática para mantener la proporción de la imagen */
+      }
+      .carousel-container {
+        width: 30%;
       }
     }
+    @media screen and (max-width: 500px) {
+      .carousel-container {
+        width: 70%;
+      }
+      li {
+        font-size: 1rem;
+    }
+    ul {
+      padding-left: 0;
+    }
+    .titulo {
+      font-size: 2.2rem;
+    }
+    .imagen {
+      width: 80%;
+    }
+  }
   
 .contenedor_section {
     width: 100%;
