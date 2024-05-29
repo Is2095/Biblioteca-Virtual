@@ -108,7 +108,7 @@ header h1{
 }
 .carousel-item img {
     max-width: 40%; /* Ajustar al 100% del ancho del contenedor */
-    height: 80vh; 
+    height: auto; 
     MARGIN: 0 auto;
 }
 .carousel-control-prev-icon,
@@ -137,7 +137,7 @@ header h1{
   color: #fff;
 } 
   /* Estilos para hacer el carrusel responsive */
-  @media (max-width: 768px) {
+  @media (max-width: 900px) {
     .carousel-item img {
       max-width: 100%; /* Ajusta el ancho al 100% en dispositivos con ancho de pantalla menor a 768px */
         height: auto; /* Altura automática para mantener la proporción de la imagen */
