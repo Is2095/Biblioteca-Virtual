@@ -1,0 +1,95 @@
+const axios = require('axios');
+const mysql = require('mysql');
+
+// Configura la conexión a la base de datos
+const db = mysql.createConnection({
+    host: 'localhost',
+    user: 'tu_usuario_mysql',
+    password: 'tu_contraseña_mysql'
+});
+
+db.connect((err) => {
+    if (err) {
+        console.error('Error connecting to the database:', err.stack);
+        return;
+    }
+    console.log('Connected to the database.');
+
+    // Crear la base de datos si no existe
+    db.query('CREATE DATABASE IF NOT EXISTS google_books', (err, result) => {
+        if (err) throw err;
+        console.log('Database created or already exists.');
+
+        // Seleccionar la base de datos
+        db.query('USE google_books', (err, result) => {
+            if (err) throw err;
+            console.log('Using google_books database.');
+
+            // Crear la tabla si no existe
+            <!-- const createTableQuery = `
+                CREATE TABLE IF NOT EXISTS books (
+                    id INT AUTO_INCREMENT PRIMARY KEY,
+                    title VARCHAR(255),
+                    authors VARCHAR(255),
+                    published_date VARCHAR(50),
+                    cover_url VARCHAR(255)
+                )
+            `; -->
+            db.query(createTableQuery, (err, result) => {
+                if (err) throw err;
+                console.log('Table created or already exists.');
+
+                // Clave de API de Google Books
+                const apiKey = 'TU_CLAVE_DE_API_DE_GOOGLE_BOOKS'; // Reemplaza con tu clave de API
+
+                // Función para obtener libros por categoría
+                async function fetchBooksByCategory(category) {
+                    try {
+                        const response = await axios.get(`https://www.googleapis.com/books/v1/volumes?q=subject:${category}&maxResults=20&key=${apiKey}`);
+                        return response.data.items;
+                    } catch (error) {
+                        console.error('Error fetching books:', error);
+                        return [];
+                    }
+                }
+
+                // Función para guardar libros en la base de datos
+                function saveBookToDatabase(book) {
+                    const { title, authors, publishedDate, imageLinks } = book.volumeInfo;
+                    const coverUrl = imageLinks ? imageLinks.thumbnail : 'https://via.placeholder.com/128x192?text=No+Cover';
+                    const authorsStr = authors ? authors.join(', ') : 'Autor desconocido';
+
+                    const sql = 'INSERT INTO books (title, authors, published_date, cover_url) VALUES (?, ?, ?, ?)';
+                    db.query(sql, [title, authorsStr, publishedDate, coverUrl], (err, result) => {
+                        if (err) {
+                            console.error('Error inserting book:', err);
+                        } else {
+                            console.log('Book inserted:', result.insertId);
+                        }
+                    });
+                }
+
+                // Función principal
+                async function main() {
+                    const category = 'fantasy'; // Reemplaza con la categoría deseada
+                    const books = await fetchBooksByCategory(category);
+
+                    books.forEach(book => {
+                        saveBookToDatabase(book);
+                    });
+
+                    // Cierra la conexión a la base de datos
+                    db.end((err) => {
+                        if (err) {
+                            console.error('Error closing the database connection:', err);
+                        } else {
+                            console.log('Database connection closed.');
+                        }
+                    });
+                }
+
+                main();
+            });
+        });
+    });
+});
