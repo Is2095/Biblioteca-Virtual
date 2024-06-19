@@ -4,8 +4,7 @@ import "dotenv/config";
 
 const PASSWORD = process.env.PASSWORD;
 
-const coneccionBD = () => {
-
+export const coneccionBD = () => {
     const db = mysql.createConnection({
         host: 'localhost',
         user: 'root',
@@ -22,6 +21,15 @@ const coneccionBD = () => {
     })
     return db;
 }
+export const desconeccionBD = (db) => {
+    db.end((err) => {
+        if(err) {
+            throw Error('error al desconecatar la base de datos')
+        } else {
+            console.log('Base de datos desconectada');
+        }
+    })
+
+}
 
 
-export default coneccionBD;

@@ -1,39 +1,35 @@
 
-import coneccionBD from '../data/index.js'
+import 'dotenv/config';
 
-const obtenerLibros = (req, res) => {
+const APIKEY = process.env.APIKEY;
+
+const ObtenerLibros = (req, res) => {
 
     const categoria = req.query.categoria;
 
-    const db = coneccionBD();
-
-    db.query('SELECT id_categoria FROM categoria WHERE categoria = ?', [categoria], (err, result) => {
-        if (err) {
-            db.end()
-            throw Error('error al consiguir los datos', err)
-        } else {
-            const id_categoria = result[0].id_categoria
-            db.query('SELECT  libros.* FROM libros  WHERE id_categoria = ? ', [id_categoria], (err, resultLibros) => {
-                if (err) {
-                    db.end()
-                    throw Error('error al consiguir los datos', err)
-                } else {
-                    db.query('SELECT favoritos.id_libro_f FROM favoritos', (err, resultFavoritos) => {
-                        if (err) {
-                            db.end()
-                            throw Error('error al consiguir los datos', err)
-                        } else {
-                            let total = [...resultLibros, { favoritos: resultFavoritos }]
-                            res.status(200).json(total)
-                        }
-                    })
-                }
+    fetch(`https://www.googleapis.com/books/v1/volumes?q=subject:${categoria}&maxResults=5&langRestrict=es&key=${APIKEY}`)
+        .then(result => result.json())
+        .then(libros => libros.items)
+        .then(librosCategoria => {
+            const datosLibros = [];
+            librosCategoria?.forEach(items => {
+                if (items.volumeInfo.description && items.volumeInfo.imageLinks && items.volumeInfo.authors && items.volumeInfo.publishedDate) {
+                    datosLibros.push({
+                        id: items.id,
+                        authors: items.volumeInfo.authors[0],
+                        description: items.volumeInfo.description,
+                        imageLink: items.volumeInfo?.imageLinks?.thumbnail,
+                        language: items.volumeInfo.language,
+                        pageCount: items.volumeInfo.pageCount,
+                        title: items.volumeInfo.title,
+                        publishedDate: items.volumeInfo.publishedDate,
+                        categoria: categoria
+                    });
+                };
             });
+            res.status(200).json(datosLibros);
+        })
+        .catch(err => console.log(err));
+};
 
-        }
-
-    })
-
-}
-
-export default obtenerLibros;
+export default ObtenerLibros;

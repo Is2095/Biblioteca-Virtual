@@ -19,13 +19,15 @@
 </head>
 
 <body>
-  <!-- <header>
+  <header>
 
     <nav>
       <ul>
-        <li><a href="./formulario/CONTACTO.html">Contacto</a></li>
-        <li><a href="seccion_3.html">Novedades</a></li>
-        <li><a href="About_us.html">Quienes somos</a></li>
+        <li><a id="hrefRegistrarse" class="a" href="./formulario/CONTACTO.html">Registrarse</a></li>
+        <li><a id="hrefEntrar" class="a" href="./login/index.html">Login</a></li>
+        <li><a id="hrefSalir" class="a" href="#" onclick="sessionStorage.removeItem('idUsuario'); sessionStorage.removeItem('usuario'); location.reload()
+        ">Salir</a></li>
+      <!--   <li><a href="About_us.html">Quienes somos</a></li> -->
       </ul>
       <div class="container_header">
         <h1 class="titulo">Biblioteca Digital</h1>
@@ -34,8 +36,8 @@
         </div>
       </div>
 
-    </nav> 
-  </header>-->
+    </nav>
+  </header>
   <!-- SECCION SOBRE MI -->
   <section id="sobremi" class="sobremi">
     <div class="contenido-seccion">
@@ -66,13 +68,13 @@
           <span>EDUCATION</span>
         </button>
       </div>
-      <div class="interes">
+      <!-- <div class="interes">
 
         <button onclick="{llamar('comics')}">
           <i class="fa-solid fa-guitar"></i>
           <span>COMICS</span>
         </button>
-      </div>
+      </div> -->
       <div class="interes">
         <button onclick="{llamar('art')}">
           <i class="fa-solid fa-book-bible"></i>
@@ -155,7 +157,6 @@
     crossorigin="anonymous"></script>
   <script src="https://kit.fontawesome.com/faec7e0b5f.js" crossorigin="anonymous"></script>
   <script src="./js/index.js"></script>
-  <script src="./js/favoritos.js"></script>
   <script src="./js/favoritos.js"></script>
 </body>
 

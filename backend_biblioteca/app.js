@@ -34,6 +34,10 @@ app.use((_req, res, next) => {
     next();
 
 });
+// app.post('/api', (req, res) => {
+//     console.log('hola mundo formulario');
+//     res.status(200)
+// })
 app.use('/api', router);    
 
 app.listen(PORT, () => {
