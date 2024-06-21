@@ -1,25 +1,29 @@
 
 import { Router } from "express";
-import ObtenerLibros from '../controller/getLibros.js'
-import GuardarFavorito from '../controller/postFavorito.js'
-import BorrarFavorito from "../controller/deleteFavorito.js";
-import PostFormUsuario from "../controller/postFormUsuario.js";
-import BuscarUsuario from "../controller/buscarUsuarioPorEmail.js";
-import BuscarFavoritos from "../controller/getFavoritos.js";
+import ObtenerLibrosPorCategoriaAPI from '../controller/getLibrosPorCategoriaAPI.js';
+import ObtenerLibroPorId from "../controller/getLibroPorIdBD.js";
+
+import BuscarFavoritosBD from "../controller/getFavoritosBD.js";
+import GuardarLibroComoFavoritoBD from '../controller/postLibroComoFavoritoBD.js';
+
+import GuardarUsuarioBD from "../controller/postUsuarioBD.js";
+import BuscarUsuarioPorEmailBD from "../controller/getUsuarioPorEmailBD..js";
+
+import BorrarFavoritoBD from "../controller/deleteFavoritoBD.js";
+
 
 const router = Router()
 
-router.get('/libros', ObtenerLibros)
+router.get('/libros', ObtenerLibrosPorCategoriaAPI)
+router.get('/libros/:id', ObtenerLibroPorId)
 
-router.get('/favoritos/:id_usuario', BuscarFavoritos)
-// router.get('/libros/:id', (res, req) => {
-//     const categoría = res.params.id
-//     console.log('hola mundo', categoría);
-// })
-router.post('/formulario', PostFormUsuario)
-router.post('/usuario', BuscarUsuario)
-router.post('/favoritos', GuardarFavorito)
+router.get('/favoritos/:id_usuario', BuscarFavoritosBD)
+router.post('/favoritos', GuardarLibroComoFavoritoBD)
+router.delete('/', BorrarFavoritoBD)
+
+router.post('/formulario', GuardarUsuarioBD)
+router.post('/usuario', BuscarUsuarioPorEmailBD)
+
 router.put('/', (req, res) => {})
-router.delete('/:id', BorrarFavorito)
 
 export default router;

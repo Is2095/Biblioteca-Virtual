@@ -3,7 +3,7 @@ import 'dotenv/config';
 
 const APIKEY = process.env.APIKEY;
 
-const ObtenerLibros = (req, res) => {
+const ObtenerLibrosPorCategoriaAPI = (req, res) => {
 
     const categoria = req.query.categoria;
 
@@ -32,4 +32,4 @@ const ObtenerLibros = (req, res) => {
         .catch(err => console.log(err));
 };
 
-export default ObtenerLibros;
+export default ObtenerLibrosPorCategoriaAPI;

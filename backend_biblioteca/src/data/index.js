@@ -15,6 +15,7 @@ export const coneccionBD = () => {
     db.connect((err) => {
         if (err) {
             console.log('error al conectarse a la base de datos');
+            return;
         } else {
             console.log('coneción exitosa a la base de datos: biblioteca_virtual');
         }
@@ -24,7 +25,7 @@ export const coneccionBD = () => {
 export const desconeccionBD = (db) => {
     db.end((err) => {
         if(err) {
-            throw Error('error al desconecatar la base de datos')
+            throw Error('error al desconecatar la base de datos', err)
         } else {
             console.log('Base de datos desconectada');
         }

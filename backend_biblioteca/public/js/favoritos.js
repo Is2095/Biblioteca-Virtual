@@ -17,7 +17,13 @@ function toggleFavorite(button) {
     const datosLibroFavorito = { id, authors, description, imageLink, pageCount, published_date, title, language, id_usuario, categoria}
 
     if (!corazonRojo) {
-        fetch(`http://localhost:3001/api/${id}`, { method: 'DELETE' })
+        fetch(`http://localhost:3001/api`, { 
+            method: 'DELETE' ,
+            headers: {
+                'Content-Type': 'application/json' 
+            },
+            body: JSON.stringify({id, id_usuario})
+        })
             .then(res => res.json())
             .then(res => console.log(res))
             .catch(err => console.log(err))

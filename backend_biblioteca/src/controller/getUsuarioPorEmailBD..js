@@ -1,7 +1,7 @@
 
 import { coneccionBD, desconeccionBD } from "../data/index.js";
 
-const BuscarUsuario = (req, res) => {
+const BuscarUsuarioPorEmailBD = (req, res) => {
 
     const { email } = req.body;
 
@@ -18,4 +18,4 @@ const BuscarUsuario = (req, res) => {
     });
 };
 
-export default BuscarUsuario;
+export default BuscarUsuarioPorEmailBD;

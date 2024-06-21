@@ -1,8 +1,8 @@
 
 import { coneccionBD, desconeccionBD }from "../data/index.js";
 
-const obtenerLibroPorId = (id) => {
-
+const ObtenerLibroPorId = (req, res) => {
+    const {id} = req.params
     const db = coneccionBD();
     db.query('SELECT * FROM libros WHERE id_libro = ?', [parseInt(id)], (err, result) => {
         if (err) {
@@ -14,4 +14,4 @@ const obtenerLibroPorId = (id) => {
         };
     });
 };
-export default obtenerLibroPorId;
+export default ObtenerLibroPorId;

@@ -1,7 +1,7 @@
 
 import { coneccionBD, desconeccionBD } from "../data/index.js";
 
-const PostFormUsuario = (req, res) => {
+const GuardarUsuarioBD = (req, res) => {
 
     const db = coneccionBD();
     const { nombre, apellido, edad, email, fechaActual, provincia } = req.body;
@@ -46,4 +46,4 @@ const PostFormUsuario = (req, res) => {
     });
 };
 
-export default PostFormUsuario;
+export default GuardarUsuarioBD;

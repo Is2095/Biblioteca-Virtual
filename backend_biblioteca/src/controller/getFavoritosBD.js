@@ -1,7 +1,7 @@
 
 import { coneccionBD, desconeccionBD } from "../data/index.js";
 
-const BuscarFavoritos = (req, res) => {
+const BuscarFavoritosBD = (req, res) => {
 
     const { id_usuario } = req.params;
 
@@ -18,4 +18,4 @@ const BuscarFavoritos = (req, res) => {
     });
 
 };
-export default BuscarFavoritos;
+export default BuscarFavoritosBD;
