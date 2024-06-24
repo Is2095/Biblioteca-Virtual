@@ -11,14 +11,13 @@ const GuardarUsuarioBD = (req, res) => {
     db.query('SELECT usuarios.id_usuario FROM usuarios WHERE usuarios.email = ?', [email], (err, result) => {
         if (err) {
             desconeccionBD(db);
-            throw Error('error al buscar la información del usuario');
+            res.status(404).json({ err: 'error al buscar la información del usuario' })
         } else {
-            if (!result) {
+            if (result.length === 0) {
                 db.query('INSERT IGNORE INTO usuarios (nombre, apellido, edad, email, fechaActual, provincia) VALUES (?, ?, ?, ?, ?, ?);', [nombre, apellido, edadNumber, email, dateActual, provincia], (err, result) => {
                     if (err) {
                         desconeccionBD(db);
-                        throw Error('error al guardar los datos del usuario');
-                    } else {
+                        res.status(404).json({ err: 'error al guardar los datos del usuario' })
                         // if (result.warningStatus > 0) {
                         //     db.query('SHOW WARNINGS', (warnErr, warningns) => {
                         //         if (warnErr) {
@@ -41,7 +40,6 @@ const GuardarUsuarioBD = (req, res) => {
                 console.log('usuario existente');
                 res.status(404).json({ err: 'usuario existente' })
             };
-            desconeccionBD(db);
         };
     });
 };

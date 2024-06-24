@@ -10,10 +10,15 @@ const BuscarUsuarioPorEmailBD = (req, res) => {
     db.query('SELECT * FROM usuarios WHERE usuarios.email = ?', [email], (err, result) => {
         if (err) {
             desconeccionBD(db);
-            console.log('error al buscar el usuario', err);
+            res.status(404).json({ err: 'error al buscar el usuario' })
+            // console.log('error al buscar el usuario', err);
         } else {
             desconeccionBD(db);
-            res.status(200).json(result);
+            if(result.length === 0) {
+                res.status(200).json({'err': "no se encontró el usuario"})
+            }else {
+                res.status(200).json(result[0]);
+            }
         }
     });
 };

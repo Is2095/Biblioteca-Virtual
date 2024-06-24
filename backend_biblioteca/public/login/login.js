@@ -13,13 +13,14 @@ const login = () => {
     })
     .then(resultado => resultado.json())
     .then(usuario => {
-        if(usuario.length === 0) {
+        if(usuario.err) {
             alert('el usuario no existe')
         } else {
-            sessionStorage.setItem('usuario', usuario[0].nombre)
-            sessionStorage.setItem('idUsuario', usuario[0].id_usuario)
+            sessionStorage.setItem('usuario', usuario.nombre)
+            sessionStorage.setItem('idUsuario', usuario.id_usuario)
+            sessionStorage.setItem('imageUser', usuario.foto)
 
-            alert(`el usuario: ${usuario[0].nombre} se encontró`)
+            alert(`el usuario: ${usuario.nombre} se encontró`)
             window.location.href = '../index.html'
 
     }   }) 

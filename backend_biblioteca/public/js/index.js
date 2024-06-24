@@ -4,26 +4,29 @@ const entrar = $d.getElementById('hrefEntrar');
 const salir = $d.getElementById('hrefSalir');
 const registrarse = $d.getElementById('hrefRegistrarse');
 const botonFavorito = $d.getElementById('botonFavorito');
+const user = $d.getElementById('hrefUser');
 
 const datoUsuario = sessionStorage.getItem('idUsuario');
 
 if (datoUsuario) {
     entrar.style.opacity = '0';
     salir.style.opacity = '1';
+    user.style.opacity= '1';
     registrarse.style.opacity = '0';
 } else {
     entrar.style.opacity = '1';
     salir.style.opacity = '0';
+    user.style.opacity= '0';
     registrarse.style.opacity = '1';
 }
 
 const llamar = async (categoria) => {
-
+    
     const contenedor = document.getElementById('librosBD');
     contenedor.innerHTML = '';
-
+    
     const id_usuario = sessionStorage.getItem('idUsuario');
-
+    
     const response = await fetch(`http://localhost:3001/api/favoritos/${parseInt(id_usuario)}`);
     const arrayFavoritos = await response.json();
 

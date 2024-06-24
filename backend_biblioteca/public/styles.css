@@ -8,6 +8,17 @@
   /* Color inicial del icono */
   outline: none;
 }
+.usuario {
+  /* font-size: .5rem; */
+  border-radius: 22px;
+  color: rgb(66, 66, 66);
+  width: 2.8rem;
+  height: 2.8rem;
+}
+.usuario:hover {
+  cursor: pointer;
+  color: brown;
+}
 
 
 .botonCorazon.active .bi-heart-fill {
