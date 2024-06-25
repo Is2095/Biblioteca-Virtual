@@ -102,7 +102,8 @@ Guarda los datos del libro y usuario, relacionando libro(favorito)-usuario
 `DELETE /api/`
 Borra el libro favoritos de tabla de libro y tabla secundaria favoritos, asociado al usuario específico
 
-- Respuesta []
+- Respuesta: {"message": "eliminación de favoritos exitosa"}
+- Respuesta error: libro incorrecto, usuario incorrecto, eliminación fallida: {"err": "mensaje de error correspondiente"}
 
 `POST /api/formulario`
 Guarda los datos del usuario registrado
