@@ -4,10 +4,10 @@ import { coneccionBD, desconeccionBD }from "../data/index.js";
 const ObtenerLibroPorId = (req, res) => {
     const {id} = req.params
     const db = coneccionBD();
-    db.query('SELECT * FROM libros WHERE id_libro = ?', [parseInt(id)], (err, result) => {
+    db.query('SELECT * FR OM libros WHERE id_libro = ?', [parseInt(id)], (err, result) => {
         if (err) {
             desconeccionBD(db);
-            throw Error('error al conseguir el dato del libro');
+            res.status(404).json({ err: "error al conseguir el dato del libro" })
         } else {
             desconeccionBD(db);
             res.status(200).send(result);

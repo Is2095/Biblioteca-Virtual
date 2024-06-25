@@ -39,7 +39,7 @@ const llamar = async (categoria) => {
                 };
 
                 const { id, authors, description, imageLink, language, pageCount, title, publishedDate, id_libro } = objeto;
-                const datosLibroFavorito = { id, authors, description, language, pageCount, title, publishedDate, id_usuario, categoria };
+                const datosLibroFavorito = { id, authors, description, imageLink, language, pageCount, title, publishedDate, id_usuario, categoria };
                 const esFavorito = arrayFavoritos.some(elemt => elemt.id === id);
 
                 if (authors && description && imageLink && language && title) {

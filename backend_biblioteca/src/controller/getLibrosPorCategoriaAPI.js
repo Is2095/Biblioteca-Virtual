@@ -29,7 +29,10 @@ const ObtenerLibrosPorCategoriaAPI = (req, res) => {
             });
             res.status(200).json(datosLibros);
         })
-        .catch(err => console.log(err));
+        .catch(err => {
+            console.log(err)
+            res.status(404).json({err: "error al buscar los datos a la API"})
+        });
 };
 
 export default ObtenerLibrosPorCategoriaAPI;

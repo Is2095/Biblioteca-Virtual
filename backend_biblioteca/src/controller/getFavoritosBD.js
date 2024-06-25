@@ -10,7 +10,9 @@ const BuscarFavoritosBD = (req, res) => {
     db.query('SELECT l.id FROM libros l JOIN favoritos f ON l.id_libro = f.id_libro_f WHERE f.id_usuario_f = ?', [id_usuario], (err, result) => {
         if (err) {
             desconeccionBD(db);
-            throw Error('error al hacer JOIN a favoritos');
+            res.status(404).json({ err: "error al hacer obtener los datos" })
+
+            // throw Error('error al hacer JOIN a favoritos');
         } else {
             desconeccionBD(db);
             res.status(200).json(result);
