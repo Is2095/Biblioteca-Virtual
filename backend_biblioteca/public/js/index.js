@@ -5,6 +5,7 @@ const salir = $d.getElementById('hrefSalir');
 const registrarse = $d.getElementById('hrefRegistrarse');
 const botonFavorito = $d.getElementById('botonFavorito');
 const user = $d.getElementById('hrefUser');
+const nombreLibro = $d.getElementById('libroPorTitulo')
 
 const datoUsuario = sessionStorage.getItem('idUsuario');
 
@@ -22,6 +23,8 @@ if (datoUsuario) {
 
 const llamar = async (categoria) => {
     
+    let nombreDelLibro = '';
+
     const contenedor = document.getElementById('librosBD');
     contenedor.innerHTML = '';
     
@@ -59,9 +62,11 @@ const llamar = async (categoria) => {
                 };
             });
     };
-
-    fetch(`http://localhost:3001/api/libros?categoria=${categoria}`)
-        .then(res => res.json())
-        .then(res => insertarDatos(res))
-        .catch(err => console.log(err));
+    if(categoria === 'titulo') {
+        nombreDelLibro = $d.getElementById('libroPorTitulo').value.toLowerCase();
+    }
+    fetch(`http://localhost:3001/api/libros?nombreLibro=${nombreDelLibro}&categoria=${categoria}`)
+    .then(res => res.json())
+    .then(res => insertarDatos(res))
+    .catch(err => console.log(err));  
 };  
