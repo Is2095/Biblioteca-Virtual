@@ -134,3 +134,44 @@ Buscar un usuario por un email específico.
 - Respuesta error: {"err": "mensaje de error correspondiente"}.
 
 `PUT /api/`
+
+
+
+# Base de Datos - MySQL con Workbench
+
+## Estructura de tablas
+
+## tabla "libros"
+
+- id_libro INT PK NotNull
+- authors VARCHAR(50) NotNull
+- description TEXT
+- ImageLink VARCHAR(250) NotNull
+- language VARCHAR(5) NotNull
+- pageCount INT NotNull
+- title VARCHAR(50) NotNull
+- puclished_date VARCHAR(50) NotNull
+- id_categoría INT FK (de tabla categoria)
+- id VARCHAR(45) NotNull
+
+## tabla "usuarios"
+
+- id_usuario INT PK NotNull
+- nombre VARCHAR(45) NotNull
+- apellido VARCHAR(45) NotNull
+- edad INT NotNull
+- email VARCHAR(45) NotNull Unique
+- fechaActual DATE NotNull
+- provincia VARCHAR(45) NotNull
+- foto VARCHAR(45) NotNull
+
+## tabla "categoria"
+
+- id_categoria INT PK NotNull
+- categoria VARCHAR(45) NotNull
+
+## tabla "favoritos"
+
+- id_favoritos INT PK NotNull
+- id_libro_f INT FK (de tabla libros)
+- id_usuario_f INT FK (de tabla usuarios)

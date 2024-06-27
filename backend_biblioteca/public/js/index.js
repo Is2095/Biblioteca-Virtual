@@ -5,7 +5,8 @@ const salir = $d.getElementById('hrefSalir');
 const registrarse = $d.getElementById('hrefRegistrarse');
 const botonFavorito = $d.getElementById('botonFavorito');
 const user = $d.getElementById('hrefUser');
-const nombreLibro = $d.getElementById('libroPorTitulo')
+const nombreLibro = $d.getElementById('libroPorTitulo');
+const loading = $d.getElementById('loading')
 
 const datoUsuario = sessionStorage.getItem('idUsuario');
 
@@ -23,6 +24,8 @@ if (datoUsuario) {
 
 const llamar = async (categoria) => {
     
+    loading.style.display = 'block'
+    
     let nombreDelLibro = '';
 
     const contenedor = document.getElementById('librosBD');
@@ -32,41 +35,44 @@ const llamar = async (categoria) => {
     
     const response = await fetch(`http://localhost:3001/api/favoritos/${parseInt(id_usuario)}`);
     const arrayFavoritos = await response.json();
-
+    
     const insertarDatos = (datos) => {
-            datos.forEach((objeto, index) => {
-                const div = document.createElement('div');
-                div.classList.add('carousel-item');
-                if (index === 0) {
+        datos.forEach((objeto, index) => {
+            const div = document.createElement('div');
+            div.classList.add('carousel-item');
+            if (index === 0) {
                     div.classList.add('active');
                 };
-
+                
                 const { id, authors, description, imageLink, language, pageCount, title, publishedDate, id_libro } = objeto;
                 const datosLibroFavorito = { id, authors, description, imageLink, language, pageCount, title, publishedDate, id_usuario, categoria };
                 const esFavorito = arrayFavoritos.some(elemt => elemt.id === id);
 
                 if (authors && description && imageLink && language && title) {
                     div.innerHTML = `
-                            <button id="botonCorazon" class="botonCorazon ${esFavorito ? "active" : ""} ${datoUsuario ? "" : "noHayDatos"}">
-                                <i class="bi bi-heart-fill"></i>
-                            </button>
-                            <img class="imagenCarrusel" src="${imageLink}"></img>
-                            <p>título ${title}</p>
-                            <p>Autor ${authors}</p>
-                            <p>fecha de impreso: ${publishedDate}</p>
-                            <p>cantidad de hojas: ${pageCount}</p>
+                    <button id="botonCorazon" class="botonCorazon ${esFavorito ? "active" : ""} ${datoUsuario ? "" : "noHayDatos"}">
+                    <i class="bi bi-heart-fill"></i>
+                    </button>
+                    <img class="imagenCarrusel" src="${imageLink}"></img>
+                    <p>título ${title}</p>
+                    <p>Autor ${authors}</p>
+                    <p>fecha de impreso: ${publishedDate}</p>
+                    <p>cantidad de hojas: ${pageCount}</p>
                     `;
                     const boton = div.querySelector('#botonCorazon');
                     boton.addEventListener('click', () => toggleFavorite(boton, datosLibroFavorito))
-                    contenedor.appendChild(div);
+                    // setTimeout(() => {  
+                        loading.style.display = 'none';
+                        contenedor.appendChild(div);
+                    // }, 1000)
                 };
             });
-    };
-    if(categoria === 'titulo') {
-        nombreDelLibro = $d.getElementById('libroPorTitulo').value.toLowerCase();
-    }
-    fetch(`http://localhost:3001/api/libros?nombreLibro=${nombreDelLibro}&categoria=${categoria}`)
-    .then(res => res.json())
-    .then(res => insertarDatos(res))
-    .catch(err => console.log(err));  
+        };
+        if(categoria === 'titulo') {
+            nombreDelLibro = $d.getElementById('libroPorTitulo').value.toLowerCase();
+        }
+        fetch(`http://localhost:3001/api/libros?nombreLibro=${nombreDelLibro}&categoria=${categoria}`)
+        .then(res => res.json())
+        .then(res => insertarDatos(res))
+        .catch(err => console.log(err));  
 };  

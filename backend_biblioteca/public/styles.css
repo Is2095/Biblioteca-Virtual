@@ -1,3 +1,13 @@
+
+.loading {
+  display: none;
+}
+.divLoading {
+  position: absolute;
+  top: 5%;
+  left: 32%;
+}
+
 .botonCorazon {
   background: transparent;
   border: none;
@@ -30,6 +40,9 @@
 }
 
 .contenedoruno {
+  position: relative;
+  width: 80%;
+  height: 100%;
   height: auto;
   border: 1px solid black;
 }
