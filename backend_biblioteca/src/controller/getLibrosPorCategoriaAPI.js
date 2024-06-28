@@ -20,7 +20,7 @@ const ObtenerLibrosPorCategoriaAPI = (req, res) => {
         .then(librosCategoria => {
             const datosLibros = [];
             librosCategoria?.forEach(items => {
-                if (items.volumeInfo.description && items.volumeInfo.imageLinks && items.volumeInfo.authors && items.volumeInfo.publishedDate) {
+                if (items.volumeInfo.authors && items.volumeInfo.publishedDate) {
                     datosLibros.push({
                         id: items.id,
                         authors: items.volumeInfo.authors[0],

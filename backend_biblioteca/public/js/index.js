@@ -48,12 +48,12 @@ const llamar = async (categoria) => {
                 const datosLibroFavorito = { id, authors, description, imageLink, language, pageCount, title, publishedDate, id_usuario, categoria };
                 const esFavorito = arrayFavoritos.some(elemt => elemt.id === id);
 
-                if (authors && description && imageLink && language && title) {
+                if (true) {
                     div.innerHTML = `
                     <button id="botonCorazon" class="botonCorazon ${esFavorito ? "active" : ""} ${datoUsuario ? "" : "noHayDatos"}">
                     <i class="bi bi-heart-fill"></i>
                     </button>
-                    <img class="imagenCarrusel" src="${imageLink}"></img>
+                    <img class="imagenCarrusel" src="${imageLink ? imageLink : "http://static.tvmaze.com/images/no-img/no-img-portrait-text.png"}"></img>
                     <p>título ${title}</p>
                     <p>Autor ${authors}</p>
                     <p>fecha de impreso: ${publishedDate}</p>
