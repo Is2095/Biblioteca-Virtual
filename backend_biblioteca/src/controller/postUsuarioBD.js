@@ -28,12 +28,12 @@ const GuardarUsuarioBD = (req, res) => {
                         //         }
                         //     })
                         // }
+                    }
                         console.log('usuario registrado')
                         console.log('base de datos desconectada');
                         const idUsuario = result.insertId;
                         desconeccionBD(db);
                         res.redirect('http://localhost:3001/login/index.html')
-                    }
                 })
             } else {
                 desconeccionBD(db);
